@@ -9,20 +9,20 @@
             <div class="box"> 
             <h1 style="font-size:55px;"><span class="text-logo"> Carbon App Calculator</span></h1>
             <p style="text-align:left;">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat dolores quos asperiores repellendus facilis cum illo aperiam odit doloremque nostrum. Totam excepturi labore voluptatibus iusto sapiente quisquam consectetur optio magnam voluptates omnis vel officia alias distinctio quas laborum reiciendis ratione inventore veniam, cupiditate doloribus dolore, eius natus a. Magni inventore consequuntur voluptas reprehenderit perferendis! Molestias aspernatur rem autem aut temporibus.
-            </p>
+This is the carbon app calculator. Here you can enter your traveling data, and the calculator will return you carbon emissions. Please follow the instructions beneath if you need help using the app, and check the methodology page to learn how we calculate the emissions based on your personal data. </p>
+<br>
             <div class="container_buttons_links_header_carbon_app">
                 <div class="btn">
-                    <a href="{{url_for('methodology.methodology_home')}}" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Methodology</a>
+                    <a href="{{url_for('methodology.methodology_home')}}" class="btn btn-primary btn-lg mr-2", style="background-color:#86BC25; color: black;">Methodology</a>
                 </div>
                 <div class="btn">
-                    <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;", data-toggle="modal" data-target="#carbon_app_instructions">Instructions</a>
+                    <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color:#86BC25; color: black;", data-toggle="modal" data-target="#carbon_app_instructions">Instructions</a>
                 </div>
                 <div class="btn">
-                    <a href="{{url_for('carbon_app.new_entry')}}" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">New entry</a>
+                    <a href="{{url_for('carbon_app.new_entry')}}" class="btn btn-primary btn-lg mr-2", style="background-color:#86BC25; color: black;">New entry</a>
                 </div>
                 <div class="btn">
-                    <a href="{{url_for('carbon_app.your_data')}}" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Your data</a>
+                    <a href="{{url_for('carbon_app.your_data')}}" class="btn btn-primary btn-lg mr-2", style="background-color:#86BC25; color: black;">Your data</a>
                 </div>
             </div>  
             <!-- Modal Instructions -->
@@ -31,25 +31,31 @@
                 <div class="modal-content">
           
                     <div class="modal-header">
-                    <h5 class="modal-title", style="color:black; text-align: center;">Carbon App, instructions</h5>
+                    <h5 class="modal-title", style="color:black; text-align: center;">Carbon App instructions</h5>
                     </div>
           
                     <div class="modal-body", style="color:black">
                     <p style="text-align: left;">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae ratione tempore id esse nobis molestias quasi explicabo possimus ea reprehenderit.
+                    Please follow the following steps to use the app!                    
                     </p>
                     <ol style="text-align:left;">
                         <li>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, sint.
+                            Enter your transportation method
                         </li>
                         <li>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, sint.
+                        Enter the amount of kilometres you traveled                        
+                        </li>
+                        <li>
+                            Enter what fuel your transport used                       
                         </li>
                     </ol>
+                    <p style="text-align: left;">
+                        You are now ready to use the app!                   
+                     </p>
                     </div>
           
                     <div class="modal-footer">
-                        <a href="{{url_for('carbon_app.new_entry')}}" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">New entry</a>
+                        <a href="{{url_for('carbon_app.new_entry')}}" class="btn btn-primary btn-lg mr-2", style="background-color:#86BC25;">New entry</a>
                         <button class="btn btn-secondary btn-lg mr-2", style="background-color:#6c757d;" data-dismiss="modal">Close</button>
                     </div>
           
