@@ -20,12 +20,12 @@ ol {
 }
 /* Section header */
 .section_header_methodology {
-  background-color:#046A38;
+  background-color:white;
 }
 .header {
   display: flex;  
   align-items: start;
-  background: #046A38;
+  background: white;
 }
 .header .box {
   flex: 1;
