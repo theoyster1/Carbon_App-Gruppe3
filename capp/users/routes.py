@@ -9,7 +9,7 @@ def register():
   if form.validate_on_submit():
       flash('Your account has been created! Now, you are able to login!', 'success')
       return redirect(url_for('home.home_home'))
-  return render_template('users/register.html', title='register', form=form)
+  return render_template('users/register.html', title='Register', form=form)
 
 @users.route('/login', methods=['GET','POST'])
 def login():
@@ -20,6 +20,6 @@ def login():
         return redirect(url_for('home.home_home'))
     else:
         flash('Login Unsuccessful. Please check email and password!', 'danger')  
-  return render_template('users/login.html', title='login', form=form)
+  return render_template('users/login.html', title='Login', form=form)
 
 
