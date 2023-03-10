@@ -38,29 +38,37 @@
         {% endif %}
         
     </head>
+    {% set a = {'Home':'home.home_home','Carbon App':'carbon_app.carbon_app_home',
+    'Methodology':'methodology.methodology_home', 'Login' : 'users.login',
+   'Register' : 'users.register'} %}
+   
+   
+   {% set b = {'Home':'fa-solid fa-house', 
+               'Carbon App':'fa-solid fa-tree', 
+               'Methodology':'fa-solid fa-microscope'} %}
+
+
     <body>
         <section class="section_carbon_app_navbar">
           <div class="container">
             <div class="carbon_app_navbar">
               <h1 class="logo">
-                <span class="text-logo"><i class="fa-solid fa-leaf"></i> Carbon</span> App
+                <span class="text-logo"><i class="fa-solid fa-tree"></i> Carbon</span> App
               </h1>
               <nav>
                 <ul>
                     <li>
-                      <a href="{{url_for('users.register')}}">Register</a>
-                    </li>
-                    <li>
-                      <a href="{{url_for('users.login')}}">Login</a>
-                    </li>
-                    <li>
-                        <a href="{{url_for('home.home_home')}}">Home</a>
-                    </li>
-                    <li>
-                        <a href="{{url_for('methodology.methodology_home')}}">Methology</a>
-                    </li>
-                    <li>
-                        <a href="{{url_for('carbon_app.carbon_app_home')}}">Carbon App</a>
+                        {% for title2 in a %}
+                        {% if title2 != title %}
+                        <a href="{{ url_for(a[title2]) }}">{{title2}}</a>
+                        {% else %}   
+                        <a style="color: green; opacity: 50%;" href="{{ url_for(a[title2]) }}"><i class="fa-solid fa-check"></i>{{title2}}</a>
+                        {% endif %}
+                        {% endfor %}
+
+                        {% for i in title %}
+                        {% endfor %}
+                        
                     </li>
                 </ul>
               </nav> 
@@ -69,18 +77,16 @@
         </section>
 
         {% block content %} {% endblock %}
-
+<br>
         <section class="section_footer">
-          <div class="container">
             <div class="footer">
               <h1>
-                Carbon App 
+                Footer
                 <a href="#">
-                  <i class="fa-solid fa-circle-up" style="color: #568c63"></i>
+                  <i class="" style="color: #568c63"></i>
                 </a>
               </h1>
             </div>
-          </div>
         </section>
 
         <!-- Bootstrap -->
