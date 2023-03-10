@@ -4,4 +4,4 @@ methodology=Blueprint('methodology',__name__)
 
 @methodology.route('/methodology')
 def methodology_home():
-  return render_template('methodology.html', title='methodology')
+  return render_template('methodology.html', title='Methodology')
