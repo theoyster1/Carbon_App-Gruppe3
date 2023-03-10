@@ -18,12 +18,12 @@ h4 {
 }
 /* Section header */
 .section_header_carbon_app {
-  background-color:#046A38;
+  background-color: white;
 }
 .header_carbon_app {
   display: flex;  
   align-items: start;
-  background: #046A38;
+  background: white;
 }
 .header_carbon_app .box {
   flex: 1;
