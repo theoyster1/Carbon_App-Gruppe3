@@ -16,7 +16,7 @@ efco2={'Bus':{'Diesel':0.10231,'CNG':0.08,'Petrol':0.10231,'No Fossil Fuel':0},
     'Motorbike':{'Petrol':0.09816,'No Fossil Fuel':0},
     'Scooter':{'No Fossil Fuel':0},
     'Bicycle':{'No Fossil Fuel':0},
-    'Walk':{'No Fossil Fuel':0}}
+    'Walking':{'No Fossil Fuel':0}}
 efch4={'Bus':{'Diesel':2e-5,'CNG':2.5e-3,'Petrol':2e-5,'No Fossil Fuel':0},
     'Car':{'Petrol':3.1e-4,'Diesel':3e-6,'No Fossil Fuel':0},
     'Plane':{'Petrol':1.1e-4},
@@ -24,39 +24,47 @@ efch4={'Bus':{'Diesel':2e-5,'CNG':2.5e-3,'Petrol':2e-5,'No Fossil Fuel':0},
     'Motorbike':{'Petrol':2.1e-3,'No Fossil Fuel':0},
     'Scooter':{'No Fossil Fuel':0},
     'Bicycle':{'No Fossil Fuel':0},
-    'Walk':{'No Fossil Fuel':0}}
+    'Walking':{'No Fossil Fuel':0}}
 
 #Carbon app, main page
-@carbon_app.route('/carbon_app')
+@carbon_app.route('/carbon_app', methods=['GET','POST'])
 @login_required
 def carbon_app_home():
-    return render_template('carbon_app/carbon_app.html', title='Carbon App')
-
-#New entry bus
-@carbon_app.route('/carbon_app/new_entry_bus', methods=['GET','POST'])
-@login_required
-def new_entry_bus():
-    form = BusForm()
+    form = CarForm()
+    if request.method == 'POST' and request.form["form_type"] == 'Bus':
+        form = BusForm()
+    if request.method == 'POST' and request.form["form_type"] == 'Car':
+        form = CarForm()
+    if request.method == 'POST' and request.form["form_type"] == 'Plane':
+        form = PlaneForm()
+    if request.method == 'POST' and request.form["form_type"] == 'Ferry':
+        form = FerryForm()
+    if request.method == 'POST' and request.form["form_type"] == 'Motorbike':
+        form = MotorbikeForm()
+    if request.method == 'POST' and request.form["form_type"] == 'Bicycle':
+        form = BicycleForm()
+    if request.method == 'POST' and request.form["form_type"] == 'Walking':
+        form = WalkForm()
     if form.validate_on_submit():
         kms = form.kms.data
         fuel = form.fuel_type.data
-        transport = 'Bus'
-        # kms = request.form['kms']
-        # fuel = request.form['fuel_type']
-
-        co2 = float(kms) * efco2[transport][fuel]
-        ch4 = float(kms) * efch4[transport][fuel]
-        total = co2+ch4
-
-        co2 = float("{:.2f}".format(co2))
-        ch4 = float("{:.2f}".format(ch4))
-        total = float("{:.2f}".format(total))
-
-        emissions = Transport(kms=kms, transport=transport, fuel=fuel, co2=co2, ch4=ch4, total=total, author=current_user)
-        db.session.add(emissions)
-        db.session.commit()
+        transport = request.form['form_type']
+        math(kms, fuel, transport)
         return redirect(url_for('carbon_app.your_data'))
-    return render_template('carbon_app/new_entry_bus.html', title='new entry bus', form=form)
+    return render_template('carbon_app/carbon_app.html', title='Carbon App', form = form)
+
+#New entry bus
+# @carbon_app.route('/carbon_app/new_entry_bus', methods=['GET','POST'])
+# @login_required
+# def new_entry_bus():
+#     form = BusForm()
+#     if form.validate_on_submit():
+#         kms = form.kms.data
+#         fuel = form.fuel_type.data
+#         transport = 'Bus'
+#         math(kms, fuel, transport)
+#         return redirect(url_for('carbon_app.your_data'))
+#     return render_template('carbon_app/new_entry_bus.html', title='new entry bus', form=form)
 
 #New entry car
 @carbon_app.route('/carbon_app/new_entry_car', methods=['GET','POST'])
@@ -232,5 +240,21 @@ def delete_emission(entry_id):
     db.session.commit()
     flash("Entry deleted", "success")
     return redirect(url_for('carbon_app.your_data'))
+
+
+
+
+
+def math(kms, fuel, transport):
+    co2 = float(kms) * efco2[transport][fuel]
+    ch4 = float(kms) * efch4[transport][fuel]
+    total = co2+ch4
+
+    co2 = float("{:.2f}".format(co2))
+    ch4 = float("{:.2f}".format(ch4))
+    total = float("{:.2f}".format(total))
+
+    emissions = Transport(kms=kms, transport=transport, fuel=fuel, co2=co2, ch4=ch4, total=total, author=current_user)
+    db.session.add(emissions)
+    db.session.commit()
     
-  
