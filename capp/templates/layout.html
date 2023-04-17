@@ -57,11 +57,20 @@
                     <li>
                         {% for title2 in a %}
                         {% if title2 != title %}
+                        {% if not current_user.is_authenticated %}
                         <a href="{{ url_for(a[title2]) }}">{{title2}}</a>
+                        {% else %}
+                        {% if (title2 != 'Register' and title2 != 'Login')  %}
+                        <a href="{{ url_for(a[title2]) }}">{{title2}}</a>
+                        {% endif %}
+                        {% endif %}
                         {% else %}   
                         <a style="color: green; opacity: 50%;" href="{{ url_for(a[title2]) }}"><i class="fa-solid fa-check"></i>{{title2}}</a>
                         {% endif %}
                         {% endfor %}
+                        {% if current_user.is_authenticated %}
+                        <a href="{{ url_for('users.logout')}}">Logout</a>
+                        {% endif %}
                     </li>
                 </ul>
               </nav> 
