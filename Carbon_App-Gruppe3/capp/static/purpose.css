@@ -1,0 +1,141 @@
+/* Colors 
+purpose, section 1 (header, background): #2a4359
+purpose, section 1 (header, boxes): #6da6a6
+purpose, section 2 (purpose, background): #466fa6
+purpose, section 2 (purpose, boxes): #8badd9
+*/
+
+/* Utilities  */
+body, html {
+  height: 100%;
+}
+p {
+  margin: 10px 0;
+  font-size: 18px;
+}
+h4 {
+  font-size: 18px;
+  text-align: left;
+  font-weight: bold;
+}
+ol {
+  font-size: 18px;
+}
+/* .text-logo{
+  color: #163923;
+} */
+/* Section header */
+
+
+.header {
+  background-color: #FAF9F9;
+
+}
+
+
+
+
+.header .box {
+  flex-grow:1;
+  border: 1px solid #8d8d8d;
+  border-top: 10px solid #046A38;
+  background: #FAF9F9;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 0px 20px;
+  text-align:center;
+  border-radius: 0;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
+}
+.header .box:nth-of-type(1) {
+  flex-grow:2;
+}
+.header .box:nth-of-type(2) {
+  flex-grow:1;
+}
+.container_buttons_links_header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap:wrap;
+}
+.container_buttons_links_header a:hover {
+  color: #86BC25;
+}
+.container_buttons_links_header btn {
+  width: 100px;
+  height: 100px;
+  background: #86BC25;
+  color: black;
+  display: flex;
+  justify-content:center;
+  align-items:center;
+}
+/* Section purpose */
+
+
+.parallax { 
+  /* The image used */
+  /* background-image: url("https://si-interactive.s3.amazonaws.com/prod/plansponsor-com/wp-content/uploads/2020/01/23130829/PS-012320-Climate-Change-Fiduciary-Brian-Stauffer-web.gif"); */
+  background-image: url("icons/purpose2.gif");
+  /* Set a specific height */
+  height: 100%; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.caption{
+  color: #f2f2f2; 
+  background: #163923; 
+  font-size: 100px; 
+  line-height: 100px; 
+  font-weight: 700; 
+  margin: 0 5px 24px; 
+  position: absolute; 
+  left: 50%; top: 50%; 
+  text-align: center; 
+  padding: 10px; 
+  margin: 0 5px 24px; 
+  font-family: 'Libre Baskerville', serif; 
+  
+}
+/* Table with one column */
+.purpose .box {
+  flex-grow:1;
+  border: 1px solid #8d8d8d;
+  border-top: 10px solid #046A38;
+  background: #FAF9F9;;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 0px 20px;
+  text-align:center;
+  border-radius: 0;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
+}
+
+.container_purpose {
+  flex-grow:1;
+  border: 1px solid #8d8d8d;
+  border-top: 10px solid #046A38;
+  background-color: #FAF9F9;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 0px 20px;
+  text-align:center;
+  border-radius: 0;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
+}
+
+
+@media (max-width:768px) { 
+  .header {
+    flex-direction: column;
+  } 
+  .purpose {
+    flex-direction: column;
+  } 
+}

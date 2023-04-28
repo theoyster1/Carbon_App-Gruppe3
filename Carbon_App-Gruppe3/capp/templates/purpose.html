@@ -1,0 +1,181 @@
+{% extends "layout.html" %}
+{% block content %}
+<!-- OLE GIF -->
+<div class="parallax">
+    <h1 class="caption">Our Purpose</h1>
+</div>
+<!-- Header -->
+<div class = 'test2'>
+<section class="section_header_purpose">
+
+  
+      <div class="header">
+        <div class="box">
+          
+          <p style="text-align:left;">
+            The website is designed to address <b>the pressing issue of climate change</b> by providing a platform for users to easily track their carbon emissions. 
+            Through the use of simple tools and calculators, users can input data on their travel activities and obtain an estimate of their carbon footprint. 
+            Armed with this knowledge, users can take meaningful action to <b>reduce their impact on the environment by purchasing carbon offsets.</b> 
+            <br><br> <b style="text-decoration: underline;">Carbon offsets</b> are a mechanism that allows individuals and organizations to compensate for their carbon emissions by supporting projects that reduce greenhouse gas emissions elsewhere. 
+            By purchasing carbon offsets through the website, users can support renewable energy, forest conservation, and other projects that help reduce the overall carbon footprint. 
+            With this platform, the website aims to empower individuals to take responsibility for their environmental impact and contribute to a more sustainable future.
+            <b>Read more about carbon offsets at: <a href="https://climate.mit.edu/explainers/carbon-offsets" target="_blank">MIT - Carbon Offsets</a></b>
+          </p>
+          <div class="container_buttons_links_header">
+            <div class="btn">
+                <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Paper</a>
+            </div>
+            <div class="btn">
+                <a href="{{url_for('carbon_app.carbon_app_home')}}" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Carbon App</a>
+            </div>
+          </div>
+        </div>
+        <div class="box">
+            <img 
+              src="{{url_for('static', filename='icons/purpose.png')}}"
+              width="450" 
+              height="450"
+              alt=""/>
+          </div>  
+      </div>
+                <!--  -->
+      
+</div> 
+</section> 
+
+<!-- OLE 28.04 -->
+<section class="section_header_purpose">
+  
+      <div class="header">
+        <div class="box">
+            <h1>Take Action Now!</h1> <br>
+            <p>Compensate for your carbon emission by purchasing carbon offsets</p>
+          <div class="container_buttons_links_header">
+            <div class="btn">
+                <a href="https://terrapass.com/product/personal-carbon-offset-grouped" target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Buy Offset</a>
+            </div>
+            <div class="btn">
+                <a href="{{url_for('carbon_app.carbon_app_home')}}" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Carbon App</a>
+            </div>
+          </div>
+        </div>
+        <div class="box">
+            <img 
+              src="{{url_for('static', filename='icons/purpose3.gif')}}"
+
+              alt=""/>
+          </div>  
+      </div>
+                <!--  -->
+      
+</div> 
+</section> 
+<!--  -->
+
+<!-- purpose -->
+<header>
+<section class="section_body_purpose">
+    <div class="container_purpose">
+        <div class="box">
+            <br><h1 style="text-align:center;"> The Climate Crisis </h1>
+            <!-- <p>
+                The purpose of the website is to empower individuals to track and offset their carbon emissions in order to reduce their environmental impact.
+            </p>       -->
+            <p>The planet is getting warmer due to the climate change crisis, as increased levels of greenhouse gases in the atmosphere trap more heat and cause temperatures to rise. 
+                The global temperature anomaly shown in the graph represents the deviation of the Earth's average temperature from the long-term historical average, and serves as a key indicator of the impact of the climate change crisis on the planet.
+            </p>
+        </div>
+        <div class="box">
+            <canvas id="temperature_chart"></canvas>
+        </div>
+    </div>
+</section>
+<div>
+</header>
+{% block javascript %}
+
+<script>
+    //world temp
+    let world_temp_data = JSON.parse({{ average_temperature | tojson }})
+            let yearLabels = JSON.parse({{ yearLabels  | tojson}})
+
+            let min_temp = Math.min(...world_temp_data) - 0.08; // set the minimum temperature to the smallest value in the data minus 1
+            let max_temp = Math.max(...world_temp_data) + 0.125; // set the maximum temperature to the largest value in the data plus 1
+
+            new Chart(document.getElementById('temperature_chart'), {
+                type: 'line',
+                data: {
+                    labels: yearLabels,
+                    datasets: [
+                        {
+                            label: 'Global Temperature (°C)',
+                            data: world_temp_data,
+                            borderColor: '#046A38',
+                            fill: false
+                        }
+                    ]
+                },
+                options: {
+                    title: {
+                        display: true,
+                        text: 'Global Temperature Anomoly by Year',
+                        fontSize: 20,
+                        fontColor: 'black'
+                    },
+                    legend: {
+                        display: false,
+                        fontColor: 'black'
+                    },
+                    scales: {
+                        xAxes: [{
+                            ticks: {
+                                fontColor: 'black'
+                            }
+                        }],
+                        yAxes: [{
+                            ticks: {
+                                callback: function(value, index, values) {
+                                    return value + ' °C';
+                                },
+                                min: min_temp, // manually set the minimum temperature
+                                max: max_temp, // manually set the maximum temperature
+                                fontColor: 'black'
+                            }
+                        }]
+                    },
+                    animation: {
+                        duration: 5000, // set the animation duration to 3 seconds
+                        onProgress: function(animation) {
+                            let chart = animation.chart;
+                            let ctx = chart.ctx;
+                            let dataset = chart.data.datasets[0];
+                            let xScale = chart.scales['x-axis-0'];
+                            let yScale = chart.scales['y-axis-0'];
+                            let yMin = yScale.getPixelForValue(yScale.min);
+                            let yMax = yScale.getPixelForValue(yScale.max);
+                            let path = new Path2D();
+
+                            path.moveTo(xScale.getPixelForValue(0), yMax);
+
+                            for (let i = 0; i < dataset.data.length; i++) {
+                                let x = xScale.getPixelForValue(i);
+                                let y = yScale.getPixelForValue(dataset.data[i]);
+                                path.lineTo(x, y);
+                            }
+
+                            path.lineTo(xScale.getPixelForValue(dataset.data.length - 1), yMax);
+                            path.lineTo(xScale.getPixelForValue(0), yMax);
+                            path.closePath();
+
+                            ctx.save();
+                            ctx.clip(path);
+                            ctx.fillStyle = 'rgba(255, 0, 0, 0.2)';
+                            ctx.fillRect(0, 0, chart.width, chart.height);
+                            ctx.restore();
+                        }
+                    }
+                }
+            });
+</script>
+{% endblock%} 
+{% endblock content %}

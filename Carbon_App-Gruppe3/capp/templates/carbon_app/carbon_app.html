@@ -1,0 +1,100 @@
+{% extends "layout.html" %}
+{% block content %}
+<html>
+<head>
+	<title>Carbon App</title>
+</head>
+<body>
+  <div class="test2">
+    <br>
+    <div class='grid'>
+      <div class='box'>
+        {% if msg %}
+    <div class="alert alert-success">{{ msg }}</div>
+        {% endif %}
+        <h1>Carbon App</h1>
+        <u>
+        <a href="{{url_for('methodology.methodology_home')}}">Read more</a>
+      </u>
+        <br>
+
+        <h2 class='Skrift'>Select mean of conveyance</h2>
+        <form method='POST' action=''>
+          {{ form.csrf_token }}
+          <div class='form-group'>
+            {{ form.transport.label }}
+            {{ form.transport(class="form-control form-control-lg" + (" is-invalid" if form.transport.errors else "")) }}
+            {% for error in form.transport.errors %}
+            <div class='invalid-feedback'>{{ error }}</div>
+            {% endfor %}
+          </div>
+  
+          <div class='box'>
+            <h2 class = 'Skrift'>Enter kilometers traveled</h2>
+            <div class='form-group'>
+              {{ form.kms.label }}
+              {{ form.kms(class= "form-control form-control-lg rounded-0" + (" is-invalid" if form.kms.errors else "")) }}
+              {% for error in form.kms.errors %}
+              <div class='invalid-feedback'>{{ error }}</div>
+              {% endfor %}
+            </div>
+          </div>
+  
+          <div class='box'>
+            <h2 class = 'Skrift'>Select fuel type</h2>
+            <div class='form-group'>
+              {{ form.fuel_type.label }}
+              {{ form.fuel_type(id='fuel_type', class="form-control form-control-lg" + (" is-invalid" if form.fuel_type.errors else "")) }}
+              {% for error in form.fuel_type.errors %}
+              <div class='invalid-feedback'>{{ error }}</div>
+              {% endfor %}
+            </div>
+            <br>
+            {{ form.submit(class = 'btn btn-dark btn-lg btn-block') }}
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+
+<script>
+        // Get a reference to the select fields
+        var transportSelect = document.getElementById("transport");
+        var fuelTypeSelect = document.getElementById("fuel_type");
+        
+        // Define the allowed fuel types for each transport type
+        var fuelTypes = {
+          "Bus": ["Petrol", "Diesel", "CNG", "Electric"],
+          "Car": ["Petrol", "Diesel", "Electric"],
+          "Plane": ["Jet fuel"],
+          "Ferry": ["Diesel"],
+          "Motorbike": ["Gasoline"],
+          "Bicycle": ["No Fossil Fuel"],
+          "Walking": ["No Fossil Fuel"]
+        };
+        
+        // When the transport select field changes, update the fuel type options
+        transportSelect.addEventListener("change", function() {
+          // Get the selected transport type
+          var transportType = transportSelect.value;
+          // Clear the current options from the fuel type select field
+          fuelTypeSelect.innerHTML = "";
+          // Add the allowed fuel types for the selected transport type to the fuel type select field
+          for (var i = 0; i < fuelTypes[transportType].length; i++) {
+            var option = document.createElement("option");
+            option.text = fuelTypes[transportType][i];
+            option.value = fuelTypes[transportType][i];
+            fuelTypeSelect.appendChild(option);
+          }
+        });
+        
+        // Initialize the fuel type options based on the initial value of the transport select field
+        transportSelect.dispatchEvent(new Event("change"));
+        
+      </script>
+
+
+
+{% endblock content %}
