@@ -27,9 +27,14 @@
       <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='methodology.css') }}">
       <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='carbon_app.css') }}">
       <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='user.css') }}">
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='purpose.css') }}">
 
       <!-- To activate media queries in devices -->
       <meta name="viewport" content="user-scalable=yes, width=device-width, initial-scale=1">
+      
+      <!--For the plots-->
+      <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+      <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
 
         {% if title %}
             <title>{{ title }}</title>
@@ -40,18 +45,25 @@
     </head>
     {% set a = {'Home':'home.home_home','Carbon App':'carbon_app.carbon_app_home',
     'Methodology':'methodology.methodology_home', 'Login' : 'users.login',
-   'Register' : 'users.register'} %}
+   'Register' : 'users.register', 'Our Purpose' : 'purpose.purpose_home'} %}
    
   
 
 
     <body>
+  <header class = 'test1'>
+
+    <div class = 'header-container'>
         <section class="section_carbon_app_navbar">
+          <br>
+
           <div class="container">
             <div class="carbon_app_navbar">
+              <a class = 'no-hover' href="{{ url_for('home.home_home') }}">
               <h1 class="logo">
                 <span class="text-logo"><i class="fa-solid fa-tree"></i> Carbon</span> App
               </h1>
+            </a>
               <nav>
                 <ul>
                     <li>
@@ -65,7 +77,7 @@
                         {% endif %}
                         {% endif %}
                         {% else %}   
-                        <a style="color: green; opacity: 50%;" href="{{ url_for(a[title2]) }}"><i class="fa-solid fa-check"></i>{{title2}}</a>
+                        <a style="color: #046A38; opacity: 100%;" href="{{ url_for(a[title2]) }}"><i class="fa-solid fa-check"></i>{{title2}}</a>
                         {% endif %}
                         {% endfor %}
                         {% if current_user.is_authenticated %}
@@ -77,19 +89,32 @@
             </div>
           </div>
         </section>
+      </div>
+      <br>
+      <br>
+      </header>
 
         {% block content %} {% endblock %}
-<br>
-        <section class="section_footer">
-            <div class="footer">
-              <h1>
-                Footer
-                <a href="#">
-                  <i class="" style="color: #568c63"></i>
-                </a>
-              </h1>
+
+        <footer class="carbon_app_footer">
+          <div class="footer_container">
+            <div class="footer_nav">
+              <ul>
+                <li><a href="{{ url_for('home.home_home') }}">Home</a></li>
+                <li><a href="{{ url_for('purpose.purpose_home') }}">About</a></li>
+                <li><a href="{{ url_for('carbon_app.carbon_app_home') }}">Carbon App</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
             </div>
-        </section>
+            <div class="footer_logo">
+              <a href="#" class="text-logo">Carbon App</a>
+            </div>
+          </div>
+        </footer>
+        
+
+
+
 
         <!-- Bootstrap -->
         <!-- Question Accordion -->
@@ -104,6 +129,6 @@
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-        
+ 
     </body>
 </html>
