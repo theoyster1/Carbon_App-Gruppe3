@@ -4,6 +4,36 @@
 <div class="parallax">
     <h1 class="caption">Our Purpose</h1>
 </div>
+
+<!-- OLE 28.04 -->
+<section class="section_header_purpose" style="background-color: #163923;">
+    <div class="container" style="background-color: #163923; padding-top: 30px; padding-bottom: 20px;">
+        <h1 style="color: #e6e4e7; background: #3c7840; font-size: 100px; line-height: 99px; font-weight: 700; margin: 0 5px 24px; left: 50%; top: 50%; text-align: center; padding: 10px; margin: 0 5px 24px; font-family: 'Libre Baskerville', serif; ">The Climate Crisis</h1>
+      <div class="header" style="background-color: #163923;">
+        <div class="box" style="background-color: #163923;">
+          
+          <p style="color:#e6e4e7; text-align:left; font-size: 30px; font-family: 'Libre Baskerville', serif;">
+            The planet is getting warmer due to the climate change crisis, as increased levels of greenhouse gases in the atmosphere trap more heat and cause temperatures to rise. 
+                The global temperature anomaly shown in the graph represents the deviation of the Earth's average temperature from the long-term historical average, and serves as a key indicator of the impact of the climate change crisis on the planet.
+          </p>
+        </div>
+        <div class="box" style="background-color: #163923;">
+            <img 
+              src="{{url_for('static', filename='icons/purpose5.png')}}"
+
+              alt=""/>
+          </div>  
+      </div>
+      <div class="box">
+        <canvas id="temperature_chart"></canvas>
+        <p><b>Data Credit: Lenssen, N., G. Schmidt, J. Hansen, M. Menne, A. Persin, R. Ruedy, and D. Zyss, 2019: Improvements in the GISTEMP uncertainty model. J. Geophys. Res. Atmos., 124, no. 12, 6307-6326, doi:10.1029/2018JD029522 </b></p>
+    </div>
+      
+</div> 
+</section> 
+
+<!--  -->
+
 <!-- Header -->
 <section class="section_header_purpose">
     <div class="container">
@@ -72,24 +102,6 @@
 </section> 
 <!--  -->
 
-<!-- purpose -->
-<section class="section_body_purpose">
-    <div class="container">
-  
-        <div class="purpose" style="display:block;">
-            <br><h1 style="text-align:center;"> The Climate Crisis </h1>
-            <!-- <p>
-                The purpose of the website is to empower individuals to track and offset their carbon emissions in order to reduce their environmental impact.
-            </p>       -->
-            <p>The planet is getting warmer due to the climate change crisis, as increased levels of greenhouse gases in the atmosphere trap more heat and cause temperatures to rise. 
-                The global temperature anomaly shown in the graph represents the deviation of the Earth's average temperature from the long-term historical average, and serves as a key indicator of the impact of the climate change crisis on the planet.
-            </p>
-        </div>
-        <div class="box">
-            <canvas id="temperature_chart"></canvas>
-        </div>
-    </div>
-</section>
 
 {% block javascript %}
 
@@ -109,7 +121,7 @@
                         {
                             label: 'Global Temperature (°C)',
                             data: world_temp_data,
-                            borderColor: 'rgba(227, 103, 1)',
+                            borderColor: '#3c7840',
                             fill: false
                         }
                     ]
@@ -119,16 +131,16 @@
                         display: true,
                         text: 'Global Temperature Anomoly by Year',
                         fontSize: 20,
-                        fontColor: 'black'
+                        fontColor: '#e6e4e7'
                     },
                     legend: {
                         display: false,
-                        fontColor: 'black'
+                        fontColor: '#e6e4e7'
                     },
                     scales: {
                         xAxes: [{
                             ticks: {
-                                fontColor: 'black'
+                                fontColor: '#e6e4e7'
                             }
                         }],
                         yAxes: [{
@@ -138,7 +150,7 @@
                                 },
                                 min: min_temp, // manually set the minimum temperature
                                 max: max_temp, // manually set the maximum temperature
-                                fontColor: 'black'
+                                fontColor: '#e6e4e7'
                             }
                         }]
                     },
