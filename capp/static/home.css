@@ -10,7 +10,12 @@ Home, section 2 (developers, boxes): #49736f
 p {
   margin: 10px 0;
   font-size: 18px;
+  color: black;
 }
+#htext {
+  color: black;
+}
+
 /* Section header_home */
 .section_header_home {
   background-color:#046A38;

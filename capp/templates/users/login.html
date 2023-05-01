@@ -3,10 +3,8 @@
 
 <section class="register_section_css">
   <div class="container">
-          <div class="box">
-
-          </div>
-          <div class="box">
+          <div class="box_user">
+            <br>
               {% with messages = get_flashed_messages(with_categories=true) %}
                   {% if messages %}
 
@@ -64,9 +62,6 @@
                       Need An Account? <a class="ml-2" href="{{ url_for('users.register') }}">Register</a>
                   </small>
               </div>
-
-          </div>
-          <div class="box">
 
           </div>
   </div>

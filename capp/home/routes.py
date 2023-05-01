@@ -7,3 +7,8 @@ home=Blueprint('home',__name__)
 @home.route('/home')
 def home_home():
   return render_template('home.html', title = 'Home')
+
+
+@home.route("/home/developers")
+def developers():
+  return render_template('developers.html', title = 'Developers')
