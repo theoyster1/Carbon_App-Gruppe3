@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+% extends "layout.html" %}
 {% block content %}
   
 <!-- Header -->
@@ -6,27 +6,27 @@
     <div class="container">
   
       <div class="header">
-        <div class="box"> 
-          <h1 style="font-size:55px;"><span class="text-logo"> Methodology</span></h1>
+        <div class="box" style="height:400px;"> 
+          <h1 style="font-size:55px; color: black;"><span class="text-logo"> Methodology</span></h1>
           <p style="text-align:left;">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat dolores quos asperiores repellendus facilis cum illo aperiam odit doloremque nostrum. Totam excepturi labore voluptatibus iusto sapiente quisquam consectetur optio magnam voluptates omnis vel officia alias distinctio quas laborum reiciendis ratione inventore veniam, cupiditate doloribus dolore, eius natus a. Magni inventore consequuntur voluptas reprehenderit perferendis! Molestias aspernatur rem autem aut temporibus.
-          </p>
+                In this website, we explain the methodology behind the carbon app. The methodology is based on the research essay written by the group, and shows how we calculate the carbon emissions, based on the input from the user.
+                This page explains how much emissions comes directly from the different transport methods, based on the different fuels they can use. The methodology is based on different research papers, and includes different calculations regardring your transport emissions.
+            
+            </p>
+            <br>
+            <br>
+            <br>
+            <br>
           <div class="container_buttons_links_header">
             <div class="btn">
-                <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Paper</a>
+                <a href="{{url_for('static', filename='icons/methodology_paper.pdf')}}" class="btn btn-primary btn-lg mr-2", style="background-color:grey;">Methodology paper</a>
             </div>
             <div class="btn">
-                <a href="{{url_for('carbon_app.carbon_app_home')}}" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Carbon App</a>
+                <a href="{{url_for('carbon_app.carbon_app_home')}}" class="btn btn-primary btn-lg mr-2", style="background-color:grey;">Carbon App</a>
             </div>
           </div>  
         </div>
-        <div class="box">
-          <img 
-            src="{{url_for('static', filename='icons/methodology1.svg')}}"
-            width="325" 
-            height="325"
-            alt=""/>
-        </div>
+      
       </div>
       
     </div>
@@ -35,156 +35,232 @@
 <!-- Methodology -->
 <section class="section_body_methodology">
     <div class="container">
+    
   
-        <div class="methodology" style="display:block;">
-            <h1 style="text-align:center;"> Methodology</h1>
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-            </p>      
-        </div>
+        <br>
+
 
         <div class="methodology" style="display:block;">
-            <h1 style="text-align:center;"> Our numbers and formulas</h1>
-            <p>
+            <h1 style="text-align:center;"> General emissions formulas</h1>
+            <p style="text-align:center;">
               We are going to studty some \(\LaTeX ~ formulas\) that could be useful for our project:
             </p> 
         </div>
 
-        <!--Enumerated list (table with two columns)-->
-        <div class="methodology"> 
-            <div class="box_table2" style="height:200px;">
-                <ol start="1">
-                    <li>
-                        <h4>Mathematical expressions 1</h4>
-                        <p class="text-left">
-                            Mathematical expressions \( x = {-b \pm \sqrt{b^2-4ac} \over 2a} \) inside text.
-                            <br>
-                            Mathematical expressions outside text:
-                            \[ x = {-b \pm \sqrt{b^2-4ac} \over 2a} \]
-                        </p>
-                    </li>
-                </ol>                        
-            </div>
-            <div class="box_table2" style="height:200px;">
-                <ol start="2">
-                    <li>
-                        <h4>Mathematical expressions 2</h4>
-                        <p class="text-left">
-                            Mathematical expressions \( x^2 + y^2 = z^2 \) inside text.
-                            <br>
-                            Mathematical expressions outside text:
-                            \[ x^2 + y^2 = z^2 \]
-                        </p>
-                    </li>
-                </ol>
-            </div>  
-        </div>
-
-        <!--Enumerated list (table with two columns)-->
-        <div class="methodology"> 
-            <div class="box_table2" style="height:425px;">
-                <ol start="3">
-                    <li>
-                        <h4>Sums</h4>
-                        <p class="text-left">
-                            Sum \(\sum_{n=1}^{\infty} 2^{-n} = 1\) inside text.
-                            <br>
-                            Sum outside text:
-                            \[ \sum_{n=1}^{\infty} 2^{-n} = 1 \]
-                        </p>
-                    </li>
-                    <li>
-                        <h4>Products</h4>
-                        <p class="text-left">
-                            Product \(\prod_{i=a}^{b} f(i)\) inside text.
-                            <br>
-                            Product outside text:
-                            \[ \prod_{i=a}^{b} f(i) \]
-                        </p>
-                    </li>
-                </ol>                        
-            </div>
-            <div class="box_table2" style="height:425px;">
-                <ol start="5">
-                    <li>
-                        <h4>Limits</h4>
-                        <p class="text-left">
-                            Limit \(\lim_{x\to\infty} f(x)\) inside text.
-                            <br>
-                            Limit outside text:
-                            \[ \lim_{x\to\infty} f(x) \]
-                        </p>
-                    </li>
-                    <li>
-                        <h4>Integrals</h4>
-                        <p class="text-left">
-                            Integral \(\int_{a}^{b} x^2 \,dx\) inside text.
-                            <br>
-                            Integral outside text:
-                            \[ \int_{a}^{b} x^2 \,dx \]
-                        </p>
-                    </li>
-                </ol>
-            </div>  
-        </div>
-
-        
-
-        <!--Enumerated list (table with one column)-->
         <div class="methodology">              
             <div class="box_table1">
                       
             </div>
             <div class="box_table1">
                 <ol>
-                    <li>
-                        <h4>Buses</h4>
+                    
+                        <h1>General emissions</h1>
                         <p class="text-left">
-                            The <strong>carbon dioxide emissions</strong> produced by buses are organized in <strong>four categories</strong>. The carbon dioxide emission produced by diesel buses is 0.10231 grammes per kilometer. The carbon dioxide emission produced by CNG buses is 0.08 grammes per kilometer. The carbon dioxide emission produced by petrol buses is 0.10231 grammes per kilometer. If the buses do not use fossil fuel, their dioxide carbon emissions are 0 grammes per kilometer.
+                            The general formula used to calculate the users emissions, is the following:
                             <br>
-                            To work out buses dioxide emissions, we use the next formula:
-                            \[CO^2 = {Cte + \sqrt{f(km)} \over t}.\]
+                            \[CO^2 \: per \: km = {\frac{F*C}{V} + \frac{L}{T} \over P}*x \]
                             <br>
                             Where:
                             <ul style="text-align:left;">
                                 <li>
-                                    \(Cte\) is a constant, since the engine requires some fuel to initialize.
+                                    \(F\) is the fuel comsumption expressed in Quantity of Energy per km (\(Qe/km\)). \(Qe\) being the quantity of energy expressed in volume (e.g. litre), mass (e.g. kg) og energy unit (e.g. KWh)
                                 </li>
+                                <br>
                                 <li>
-                                    \(km\) are the kilometers.
+                                    \(C\) is the mass of CO2 (kg) per Quantity of Energy \(kg/Qe\), \(Qe\) being expressed in the same unit as for \(F\)
                                 </li>
+                                <br>
                                 <li>
-                                    \(f\) is a coefficient depending on the type of fuel (see paragraph above).
+                                    \(V\) is the vehicle efficiency factor, which is allways eaqual to \(1\)
                                 </li>
+                                <br>
                                 <li>
-                                    \(t\) is the temperature, since in winter the engines require less fuel.
+                                    \(L\) is the lifecycle carbon emission of the vehicle
+                                </li>
+                                <br>
+                                <li>
+                                    \(T\) is the average kilometer amount the vehicle has treveled
+                                </li>
+                                <br>
+                                <li>
+                                    \(P\) is the average amount of people present in the vehicle
+                                </li>
+                                <br>
+                                <li>
+                                    \(x\) is the kilometer amount
                                 </li>
                             </ul>
                             
                         </p>
-                    </li>
-                    <li>
-                        <h4>Cars</h4>
-                        <p class="text-left">
-                            ...
-                        </p>
-                    </li>
-                    <li>
-                        <h4>Planes</h4>
-                        <p class="text-left">
-                            ...
-                        </p>
-                    </li>
+
+                    
                 </ol>                        
             </div>
             <div class="box_table1">
                       
             </div>  
         </div>
+<br>
+<br>
+        
+        <h1 style="text-align:center;"> Emissions by transport type</h1>
+<br>
+        <!--Enumerated list (table with two columns)-->
+        <div class="methodology"> 
+            <div class="box_table2" style="height:500px;">
+                <br>
+                <ol start="1">
+                    
+                        <h3 style="text-align:left;">Cars</h3>
+                        <p class="text-left">
+                            The carbon emissions for cars are seperated into four categories, with differend emissions. They all have P = 1,5, but differ in the other constants:
+                            <li style="text-align:left;">
+                            Gasoline: \(F = 0,0561\), \(C = 2,88\), \(L = 5 600\), \(T = 160 000\)
+                            </li>
+                            <li style="text-align:left;">
+                                Diesel: \(F = 0,053\), \(C = 3,24\), \(L = 5 600\), \(T = 208 000\)
+                                </li>
+                            <li style="text-align:left;">
+                            Compressed NG: \(F = 1,229\), \(C = 3,07\), \(L = 5 600\), \(T = 184 000\)
+                             </li>
+                             <li style="text-align:left;">
+                            Electric: \(F = 0\), \(C = 0,371\), \(L = 8 800\), \(T = 321868\)
+                             </li>
+                        <br>
+                        <br>
+                         Emissions per km travelled by car (Gasoline):
+                            \[CO^2 = {\frac{0,0561*2,88}{1} + \frac{5600}{160000} \over 1,5}*x =0,13/km\]
+                        </p>
+              
+                </ol>                        
+            </div>
+            
+
+
+            <div class="box_table2" style="height:500px;">
+                <br>
+                <ol start="1">
+                    
+                        <h3 style="text-align:left;">Bus</h3>
+                        <p class="text-left">
+                            The carbon emissions for busses are seperated into three categories, with differend emissions. They all have P = 56, but differ in the other constants:
+                            <li style="text-align:left;">
+                            Diesel: \(F = 0,326\), \(C = 3,24\), \(L = 140000\), \(T = 450320\)
+                            </li>
+                            <li style="text-align:left;">
+                            Comp bio-diesel: \(F = 0,41\), \(C = 1,92\), \(L = 140000\), \(T = 450320\)
+                                </li>
+                            <li style="text-align:left;">
+                            Electric: \(F = 0\), \(C = 0,371\), \(L = 150000\), \(T = 320000\)
+                             </li>
+                        <br>
+                        <br>
+                        <br>
+                         Emissions per km travelled by bus (diesel):
+                            \[CO^2 = {\frac{0,326*3,24}{1} + \frac{140000}{450320} \over 56}*x = 0,024/km\]
+                        </p>
+              
+                </ol>                        
+            </div> 
+
+            
+        </div>
+        <br>
+
+        <div class="methodology"> 
+            <div class="box_table2" style="height:500px;">
+                <br>
+                <ol start="1">
+                    
+                        <h3 style="text-align:left;">Passenger train</h3>
+                        <p class="text-left">
+                            The carbon emissions for passenger trains are seperated into two categories, with differend emissions. They all have P = 350, but differ in the other constants:
+                            <li style="text-align:left;">
+                            Diesel: \(F = 4,25\), \(C = 3,24\), \(L = 1656700\), \(T = 7724851\)
+                            </li>
+                            <li style="text-align:left;">
+                                Electric: \(F = 0\), \(C = 0,371\), \(L = 1656700\), \(T = 7724851\)
+                                </li>
+                        <br>
+                        <br>
+                         Emissions per km travelled by train (diesel):
+                            \[CO^2 = {\frac{4,25*3,24}{1} + \frac{1656700}{7724851} \over 350}*x = 0,04/km \]
+                        </p>
+              
+                </ol>                        
+            </div>
+
+
+            <div class="box_table2" style="height:500px;">
+                <br>
+                <ol start="1">
+                    
+                        <h3 style="text-align:left;">Airplane</h3>
+                        <p class="text-left">
+                            The carbon emissions for airplanes are are all the same, with P = 121,55, because all aiplanes currently use jet fuel:
+                            <li style="text-align:left;">
+                            Jet fuel: \(F = 3,8\), \(C = 3,1\), \(L = 61000\), \(T = 84490560\)
+                            </li>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                         Emissions per km travelled by airplane:
+                            \[CO^2 = {\frac{3,8*3,1}{1} + \frac{61000}{84490560} \over 121,55}*x = 0,09/km \]
+                        </p>
+              
+                </ol>                        
+            </div> 
+
+            
+        </div>
+        <br>
+
+        <div class="methodology"> 
+            <div class="box_table2" style="height:500px;">
+                <br>
+                <ol start="1">
+                    
+                        <h3 style="text-align:left;">Motorcycle</h3>
+                        <p class="text-left">
+                            The carbon emissions for motorcycles are all the same in our calculator, because all motorcycles currently use gasoline. They all have P = 1,5, and following other constants:
+                            <li style="text-align:left;">
+                            Gasoline: \(F = 0,041\), \(C = 2,88\), \(L = 2000\), \(T = 200000\)
+                            </li>
+                        <br>
+                        <br>
+                         Emissions per km travelled by motorcycle:
+                            \[CO^2 = {\frac{0,041*2,88}{1} + \frac{2000}{200000} \over 1,5}*x = 0,08/km \]
+                        </p>
+              
+                </ol>                        
+            </div>
+
+
+            <div class="box_table2" style="height:500px;">
+                <br>
+                <ol start="1">
+                    
+                        <h3 style="text-align:left;">Boat</h3>
+                        <p class="text-left">
+                            The carbon emissions for boats are all the same in our calculator, because all boats currently use diesel. They all have P = 5, and following other constants:
+                            <li style="text-align:left;">
+                            Diesel: \(F = 0,784\), \(C = 3,24\), \(L = 553000\), \(T = 64373\)
+                            </li>
+                        <br>
+                        <br>
+                         Emissions per km travelled by boat:
+                            \[CO^2 = {\frac{0,784*3,24}{1} + \frac{553000}{64373} \over 5}*x = 2,226 /km\]
+                        </p>
+              
+                </ol>                        
+            </div> 
+
+            
+        </div>
 
         
+
       
-    </div>
-</section>
 
 {% endblock content %}
