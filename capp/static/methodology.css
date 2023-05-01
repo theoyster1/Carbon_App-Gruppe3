@@ -1,10 +1,3 @@
-/* Colors 
-Methodology, section 1 (header, background): #2a4359
-Methodology, section 1 (header, boxes): #6da6a6
-Methodology, section 2 (methodology, background): #466fa6
-Methodology, section 2 (methodology, boxes): #8badd9
-*/
-
 /* Utilities  */
 p {
   margin: 10px 0;
@@ -20,23 +13,24 @@ ol {
 }
 /* Section header */
 .section_header_methodology {
-  background-color:white;
+  background-color:lightgray;
 }
 .header {
   display: flex;  
   align-items: start;
-  background: white;
+  background: lightgray;
 }
 .header .box {
-  flex: 1;
-  background: #43B02A;
-  color: black;
-  border-radius: 10px;
-  margin: 20px 10px;
-  padding: 15px 20px;
+  flex-grow:1;
+  border: 1px solid #808080;
+  border-top: 10px solid #046A38;
+  background: #FAF9F9;
+  border-radius: 0px;
+  margin: 0px 0px;
+  padding: 0px 20px;
   text-align:center;
-  align-items: center;
-  justify-content: center;
+  border-radius: 0;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
 }
 .header .box:nth-of-type(1) {
   flex-grow:2;
@@ -51,12 +45,12 @@ ol {
   flex-wrap:wrap;
 }
 .container_buttons_links_header a:hover {
-  color: #86BC25;
+  color: #43B02A;
 }
 .container_buttons_links_header btn {
   width: 100px;
   height: 100px;
-  background: #86BC25;
+  background: #43B02A;
   color: black;
   display: flex;
   justify-content:center;
@@ -64,55 +58,57 @@ ol {
 }
 /* Section methodology */
 .section_body_methodology {
-  background-color:white;
+  background-color:lightgray;
 }
 .methodology {
   display: flex;  
   align-items: start;
-  background: white;
+  background: lightgray;
 }
 /* Table with one column */
 .methodology .box_table1 {
-  flex: 1;
-  background: #86BC25;
-  color: black;
-  border-radius: 10px;
-  margin: 10px 10px 10px 10px;
-  padding: 15px 15px;
+  flex-grow:1;
+  border: 1px solid #808080;
+  border-top: 10px solid #046A38;
+  background: #FAF9F9;
+  border-radius: 0px;
+  margin: 0px 0px;
+  padding: 0px 20px;
   text-align:center;
-  align-items: center;
-  justify-content: center;
+  border-radius: 0;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
 }
 .methodology .box_table1:nth-of-type(1) {
   flex-grow:1;
-  background: white;
+  background: lightgray;
 }
 .methodology .box_table1:nth-of-type(2) {
   flex-grow:4;
 }
 .methodology .box_table1:nth-of-type(3) {
   flex-grow:1;
-  background: white;
+  background: lightgray;
 }
 /* Table with two columns */
 .methodology .box_table2 {
   flex: 1;
-  background: #43B02A;
-  color: black;
-  border-radius: 10px;
-  margin: 10px 10px 10px 10px;
-  padding: 15px 15px;
+  border: 1px solid #808080;
+  border-top: 10px solid #046A38;
+  background: #FAF9F9;
+  border-radius: 0px;
+  margin: 0px 5px; /* add 5px margin on the left and right */
+  padding: 0px 20px;
   text-align:center;
-  align-items: center;
-  justify-content: center;
+  border-radius: 0;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
 }
 .methodology .box_table2:nth-of-type(1) {
   flex-grow:1;
-  background: #86BC25;
+  background: #FAF9F9;
 }
 .methodology .box_table2:nth-of-type(2) {
   flex-grow:1;
-  background: #86BC25;
+  background: #FAF9F9;
 }
 
 
