@@ -12,7 +12,6 @@ import requests
 carbon_app=Blueprint('carbon_app',__name__)
 
 #Emissions factor per transport in kg per passemger km
-#Data from: http://efdb.apps.eea.europa.eu/?source=%7B%22query%22%3A%7B%22match_all%22%3A%7B%7D%7D%2C%22display_type%22%3A%22tabular%22%7D
 efco2={'Bus':{'Diesel':0.0244130363170317,'CNG':0.019608750602746,'Petrol':0.10231,'Electric':0.00837053571428571},
     'Car':{'Petrol':0.131045333333333,'Diesel':0.132428717948718,'Electric':0},
     'Plane':{'Jet fuel':0.0969207895857439},
@@ -21,11 +20,11 @@ efco2={'Bus':{'Diesel':0.0244130363170317,'CNG':0.019608750602746,'Petrol':0.102
     'Scooter':{'No Fossil Fuel':0},
     'Bicycle':{'No Fossil Fuel':0},
     'Walking':{'No Fossil Fuel':0}}
-efch4={'Bus':{'Diesel':2e-5,'CNG':2.5e-3,'Petrol':2e-5,'No Fossil Fuel':0},
-    'Car':{'Petrol':3.1e-4,'Diesel':3e-6,'No Fossil Fuel':0},
+efch4={'Bus':{'Diesel':2e-5,'CNG':2.5e-3,'Petrol':2e-5,'Electric':0},
+    'Car':{'Petrol':3.1e-4,'Diesel':3e-6,'Electric':0},
     'Plane':{'Jet fuel':1.1e-4},
-    'Ferry':{'Diesel':3e-5, 'CNG':3e-5,'No Fossil Fuel':0},
-    'Motorbike':{'Gasoline':2.1e-3,'No Fossil Fuel':0},
+    'Ferry':{'Diesel':3e-5, 'CNG':3e-5,'Electric':0},
+    'Motorbike':{'Gasoline':2.1e-3,'Electric':0},
     'Bicycle':{'No Fossil Fuel':0},
     'Walking':{'No Fossil Fuel':0}}
 
