@@ -58,12 +58,12 @@ ol {
 }
 /* Section methodology */
 .section_body_methodology {
-  background-color:white;
+  background-color:lightgray;
 }
 .methodology {
   display: flex;  
   align-items: start;
-  background: white;
+  background: lightgray;
 }
 /* Table with one column */
 .methodology .box_table1 {
