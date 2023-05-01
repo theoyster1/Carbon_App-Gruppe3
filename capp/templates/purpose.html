@@ -1,9 +1,36 @@
 {% extends "layout.html" %}
 {% block content %}
-<!-- OLE GIF -->
+
 <div class="parallax">
     <h1 class="caption">Our Purpose</h1>
 </div>
+
+
+<section class="section_header_purpose" style="background-color: #163923;">
+    <div class="container" style="background-color: #163923; padding-top: 30px; padding-bottom: 20px;">
+        <h1 style="color: #e6e4e7; background: #3c7840; font-size: 100px; line-height: 99px; font-weight: 700; margin: 0 5px 24px; left: 50%; top: 50%; text-align: center; padding: 10px; margin: 0 5px 24px; font-family: 'Libre Baskerville', serif; ">The Climate Crisis</h1>
+      <div class="header" style="background-color: #163923;">
+        <div class="box" style="background-color: #163923;">
+          
+          <p style="color:#e6e4e7; text-align:left; font-size: 30px; font-family: 'Libre Baskerville', serif;">
+            The planet is getting warmer due to the climate change crisis, as increased levels of greenhouse gases in the atmosphere trap more heat and cause temperatures to rise. 
+                The global temperature anomaly shown in the graph represents the deviation of the Earth's average temperature from the long-term historical average, and serves as a key indicator of the impact of the climate change crisis on the planet.
+          </p>
+        </div>
+        <div style="background-color: #163923;">
+            <img 
+              src="{{url_for('static', filename='icons/purpose5.png')}}"
+              alt=""/>
+          </div>  
+      </div>
+      <div class="box" style="background-color: #163923;">
+        <canvas id="temperature_chart"></canvas>
+        <p><b>Data Credit: Lenssen, N., G. Schmidt, J. Hansen, M. Menne, A. Persin, R. Ruedy, and D. Zyss, 2019: Improvements in the GISTEMP uncertainty model. J. Geophys. Res. Atmos., 124, no. 12, 6307-6326, doi:10.1029/2018JD029522 </b></p>
+    </div>
+      
+</div> 
+</section> 
+
 <!-- Header -->
 <div class = 'test2'>
 <section class="section_header_purpose">
@@ -23,16 +50,16 @@
           </p>
           <div class="container_buttons_links_header">
             <div class="btn">
-                <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Paper</a>
+                <a href="#" class="btn btn-dark btn-lg mr-2">Paper</a>
             </div>
             <div class="btn">
-                <a href="{{url_for('carbon_app.carbon_app_home')}}" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Carbon App</a>
+                <a href="{{url_for('carbon_app.carbon_app_home')}}" class="btn btn-dark btn-lg mr-2">Carbon App</a>
             </div>
           </div>
         </div>
         <div class="box">
             <img 
-              src="{{url_for('static', filename='icons/purpose.png')}}"
+              src="{{url_for('static', filename='icons/plant.png')}}"
               width="450" 
               height="450"
               alt=""/>
@@ -48,50 +75,23 @@
   
       <div class="header">
         <div class="box">
-            <h1>Take Action Now!</h1> <br>
-            <p>Compensate for your carbon emission by purchasing carbon offsets</p>
+            <h1>Take Action Now!</h1>
+            <p style="text-align: center;"><b>Compensate for your carbon emission by purchasing carbon offsets</b></p>
           <div class="container_buttons_links_header">
             <div class="btn">
-                <a href="https://terrapass.com/product/personal-carbon-offset-grouped" target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Buy Offset</a>
+                <a href="https://terrapass.com/product/personal-carbon-offset-grouped" target="_blank" class="btn btn-dark btn-lg mr-2">Buy Offset</a>
             </div>
             <div class="btn">
-                <a href="{{url_for('carbon_app.carbon_app_home')}}" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Carbon App</a>
+                <a href="{{url_for('carbon_app.carbon_app_home')}}" class="btn btn-dark btn-lg mr-2">Carbon App</a>
             </div>
           </div>
         </div>
-        <div class="box">
-            <img 
-              src="{{url_for('static', filename='icons/purpose3.gif')}}"
-
-              alt=""/>
-          </div>  
       </div>
-                <!--  -->
       
 </div> 
 </section> 
 <!--  -->
 
-<!-- purpose -->
-<header>
-<section class="section_body_purpose">
-    <div class="container_purpose">
-        <div class="box">
-            <br><h1 style="text-align:center;"> The Climate Crisis </h1>
-            <!-- <p>
-                The purpose of the website is to empower individuals to track and offset their carbon emissions in order to reduce their environmental impact.
-            </p>       -->
-            <p>The planet is getting warmer due to the climate change crisis, as increased levels of greenhouse gases in the atmosphere trap more heat and cause temperatures to rise. 
-                The global temperature anomaly shown in the graph represents the deviation of the Earth's average temperature from the long-term historical average, and serves as a key indicator of the impact of the climate change crisis on the planet.
-            </p>
-        </div>
-        <div class="box">
-            <canvas id="temperature_chart"></canvas>
-        </div>
-    </div>
-</section>
-<div>
-</header>
 {% block javascript %}
 
 <script>
@@ -120,16 +120,16 @@
                         display: true,
                         text: 'Global Temperature Anomoly by Year',
                         fontSize: 20,
-                        fontColor: 'black'
+                        fontColor: '#e6e4e7'
                     },
                     legend: {
                         display: false,
-                        fontColor: 'black'
+                        fontColor: '#e6e4e7'
                     },
                     scales: {
                         xAxes: [{
                             ticks: {
-                                fontColor: 'black'
+                                fontColor: '#e6e4e7'
                             }
                         }],
                         yAxes: [{
@@ -139,7 +139,7 @@
                                 },
                                 min: min_temp, // manually set the minimum temperature
                                 max: max_temp, // manually set the maximum temperature
-                                fontColor: 'black'
+                                fontColor: '#e6e4e7'
                             }
                         }]
                     },
