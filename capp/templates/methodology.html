@@ -3,34 +3,30 @@
   
 <!-- Header -->
 <section class="section_header_methodology">
-    <div class="container">
-  
-      <div class="header">
-        <div class="box" style="height:400px;"> 
+  <div class="container">
+    <div class="header">
+      <div class="box" style="display: flex; height:400px;"> 
+        <div style="flex: 1;">
           <h1 style="font-size:55px; color: black;"><span class="text-logo"> Methodology</span></h1>
           <p style="text-align:left;">
-                In this website, we explain the methodology behind the carbon app. The methodology is based on the research essay written by the group, and shows how we calculate the carbon emissions, based on the input from the user.
-                This page explains how much emissions comes directly from the different transport methods, based on the different fuels they can use. The methodology is based on different research papers, and includes different calculations regardring your transport emissions.
-            
-            </p>
-            <br>
-            <br>
-            <br>
-            <br>
+            In this website, we explain the methodology behind the carbon app. The methodology is based on the research essay written by the group, and shows how we calculate the carbon emissions, based on the input from the user. The page explains the calculations behind each the emissions data the app calculates, and aims to make it understandable for the user. 
+          </p>
           <div class="container_buttons_links_header">
             <div class="btn">
-                <a href="{{url_for('static', filename='icons/methodology_paper.pdf')}}" class="btn btn-primary btn-lg mr-2", style="background-color:grey;">Methodology paper</a>
+              <a href="{{url_for('static', filename='icons/methodology_paper.pdf')}}" class="btn btn-primary btn-lg mr-2", style="background-color:grey;">Methodology paper</a>
             </div>
             <div class="btn">
-                <a href="{{url_for('carbon_app.carbon_app_home')}}" class="btn btn-primary btn-lg mr-2", style="background-color:grey;">Carbon App</a>
+              <a href="{{url_for('carbon_app.carbon_app_home')}}" class="btn btn-primary btn-lg mr-2", style="background-color:grey;">Carbon App</a>
             </div>
-          </div>  
+          </div>
         </div>
-      
+        <div style="flex: 1;">
+          <img src="{{url_for('static', filename='icons/methodology1.svg')}}" width="325" height="325" alt=""/>
+        </div>
       </div>
-      
     </div>
-</section> 
+  </div>
+</section>
 
 <!-- Methodology -->
 <section class="section_body_methodology">
