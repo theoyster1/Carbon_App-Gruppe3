@@ -8,16 +8,16 @@
     background: #fff;
   }
   .developers .box {
-    flex: 1;
-    background: #046A38;
-    color: black;
-    border: 3px solid #D0D0CE;
+    flex-grow:1;
+    border: 1px solid #8d8d8d;
+    border-top: 10px solid #046A38;
+    background: #FAF9F9;
     border-radius: 10px;
     margin: 20px 10px;
-    padding: 15px 20px;
+    padding: 0px 20px;
     text-align:center;
-    align-items: center;
-    justify-content: center;
+    border-radius: 0;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
   }
   .developers .box:nth-of-type(1) {
     flex-grow:4;
@@ -29,16 +29,16 @@
     flex-grow:4;
   }
   .developers .box2 {
-    flex: 1;
-    background:#046A38;
-    color: black;
-    border: 3px solid #D0D0CE;  
+    flex-grow:1;
+    border: 1px solid #8d8d8d;
+    border-top: 10px solid #046A38;
+    background: #FAF9F9;
     border-radius: 10px;
     margin: 20px 10px;
-    padding: 15px 20px;
+    padding: 0px 20px;
     text-align:center;
-    align-items: center;
-    justify-content: center;
+    border-radius: 0;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
   }
   .developers .box2:nth-of-type(1) {
     flex-grow:4;
@@ -48,6 +48,15 @@
   }
   .developers .box2:nth-of-type(3) {
     flex-grow:4;
+    border: 1px solid #8d8d8d;
+    border-top: 10px solid #046A38;
+    background: #FAF9F9;
+    border-radius: 10px;
+    margin: 20px 10px;
+    padding: 0px 20px;
+    text-align:center;
+    border-radius: 0;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
     
   }
   .section_container_buttons_developers {
@@ -65,7 +74,7 @@
     border-radius: 5px;
     text-decoration: none;
     font-size: 18px;
-    background-color: #86BC25;
+    background-color: #000000;
     border: 2px solid  #fff;
   }
   .btn_developers:hover {

@@ -16,8 +16,8 @@
                 {% endfor %}
             {% endif %}
         {% endwith %}
-        <h3 style="font-size:55px;text-align: left"><a href=“”>Our purpose</a></h3>
-        <p style="text-align:left;">
+        <a href="{{ url_for('purpose.purpose_home') }}"><h3 style="font-size:55px;text-align: left" id = 'htext'>Our purpose</h3><a>
+        <p style="text-align:left;" class = 'text'>
           How does the temperature on earth evolve? How will we contribute to change? How can you contribute?        
       </div>
       <br>
@@ -63,6 +63,14 @@
           </p>
           <div class="section_container_buttons_developers">
             <a class="btn_developers" href="{{url_for('methodology.methodology_home')}}"  target="_blank">Read more about our methodology</a>
+          </div> 
+        </div>
+        <div class="box">
+          <h3>Our team</h3>
+          <p>  Our team of developers and economists is working hard on developing and improving our economic model, the carbon app and the website. Get to know them better here.
+          </p>
+          <div class="section_container_buttons_developers">
+            <a class="btn_developers" href="{{url_for('home.developers')}}"  target="_blank">Read more about our team </a>
           </div> 
         </div>
 
