@@ -8,7 +8,7 @@ class GenForm(FlaskForm):
     transport = SelectField('Mean of conveyance', [InputRequired()],
                             choices=[('Bus', 'Bus'), ('Car', 'Car'), ('Plane', 'Plane'), ('Ferry', 'Ferry'), 
                                      ('Motorbike', 'Motorbike'),
-                                      ('Bicycle', 'Bicycle'), ('Walking', 'Walking')])
+                                      ('Bicycle', 'Bicycle'), ('Walking', 'Walking'), ('Train', 'Train')])
     kms = FloatField('Kilometers', [InputRequired()])
     fuel_type = SelectField('Type of Fuel', [InputRequired()], 
                                 choices=[('Petrol', 'Petrol'), ('Diesel', 'Diesel'), ('No Fossil Fuel', 'No Fossil Fuel'), 
