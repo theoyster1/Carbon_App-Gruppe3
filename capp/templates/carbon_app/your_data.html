@@ -82,6 +82,7 @@
                     {% endfor %}
                 {% endif %}
             {% endwith %}         
+            <div class = 'table-respons'>
             <table class="table">
                 <thead class="thead-dark">
                     <tr>
@@ -116,6 +117,7 @@
                 </tbody>
             </table>       
         </div>
+        </div>
         <div class="box">
             
         </div>
@@ -137,11 +139,11 @@
         let emissions_by_transport_chart = new Chart(emissions_by_transport, {
                 type: 'pie',
                 data: {
-                labels: ['Bicycle', 'Bus', 'Car', 'Ferry', 'Motorbike', 'Plane', 'Scooter', 'Walk'],
+                labels: ['Bicycle', 'Bus', 'Car', 'Ferry', 'Motorbike', 'Plane', 'Walk', 'Train'],
                     datasets: [{
                         data: emission_transport_data,
                         backgroundColor: ['#046A38', '#2C5234', '#0097A9',
-                            '#62B5E5', '#00A3E0', '##43B02A', '#0076A8', '#012169' ],
+                            '#62B5E5', '#00A3E0', '##43B02A', '#0076A8', '#012169', '#2C5231'],
     
                         borderWidth: 1,
                         hoverBorderColor: "white",
@@ -202,12 +204,12 @@
         let kms_by_transport_chart = new Chart(kms_by_transport, {
                 type: 'pie',
                 data: {
-                labels: ['Bicycle', 'Bus', 'Car', 'Ferry', 'Motorbike', 'Plane', 'Scooter', 'Walk'],
+                labels: ['Bicycle', 'Bus', 'Car', 'Ferry', 'Motorbike', 'Plane', 'Walk', 'Train'],
                     datasets: [{
                         label: "Income Vs Expenses",
                         data: kms_transport_data,
                         backgroundColor: ['#046A38', '#2C5234', '#0097A9',
-                        '#62B5E5', '#00A3E0', '##43B02A', '#0076A8', '#012169' ],    
+                        '#62B5E5', '#00A3E0', '##43B02A', '#0076A8', '#012169', '#2C5231' ],    
                         borderWidth: 1,
                         hoverBorderColor: "",
                         hoverBorderWidth: 2,

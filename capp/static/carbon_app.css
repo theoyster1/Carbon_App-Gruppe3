@@ -104,8 +104,11 @@ input.form-control:focus {
 /*Container two_emissions_graphs */
 .two_emissions_graphs {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
   background: #FAF9F9;
-  }  
+}
 
 .two_emissions_graphs .container {
   display: flex;
@@ -148,7 +151,6 @@ input.form-control:focus {
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
 }  
 
-
 /*End container main menu*/
 /*Container buttons section main menu */
 .container_buttons_links_main_menu {
@@ -166,6 +168,7 @@ input.form-control:focus {
   .header_carbon_app {
     flex-direction: column;
   } 
+  
   .carbon_app_new_entry_main {
     flex-direction: column;
   } 
@@ -173,10 +176,25 @@ input.form-control:focus {
     flex-direction: column;
     padding: 10px;
     text-align: center;
+    overflow-x: auto;
   }
   .table_main .container {
     flex-direction: column;
     padding: 10px;
     text-align: center;
   }
+  .table-respons {
+    overflow-x: auto;
+  }
+  .box {
+    display: block;
+  }
+  .two_emissions_graphs .container {
+    display: flex;
+    flex-direction: column;
 }
+.two_emissions_graphs .container .box {
+    width: 100%;
+}
+}
+
