@@ -26,10 +26,10 @@ efch4={'Bus':{'Diesel':2e-5,'CNG':2.5e-3,'Petrol':2e-5,'Electric':0},
     'Ferry':{'Diesel':3e-5, 'CNG':3e-5,'Electric':0},
     'Motorbike':{'Gasoline':2.1e-3,'Electric':0},
     'Bicycle':{'No Fossil Fuel':0},
-    'Walking':{'No Fossil Fuel':0}}
-
-
- 
+    'Walking':{'No Fossil Fuel':0},
+       'Train':{'Diesel':0.039955611, 'Electric':0.009601554}}
+      
+    
 #Carbon app, main page
 @carbon_app.route('/carbon_app', methods=['GET','POST'])
 @login_required
@@ -107,6 +107,12 @@ def your_data():
         emission_transport[5] = first_tuple_elements[index_plane]
     else:
         emission_transport[5]
+        
+    if "Train" in second_tuple_elements:
+        index_train = second_tuple_elements.index("Train")
+        emission_transport[6] = first_tuple_elements[index_train]
+    else:
+        emission_transport[6]
 
     # Kilometers by category
     kms_by_transport = (
