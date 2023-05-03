@@ -296,7 +296,7 @@ def delete_emission(entry_id):
 #Delete all 
 @carbon_app.route('/carbon_app/delete-all-emission')
 def delete_all_emission():
-    db.session.query(Transport).delete()
+    db.session.query(Transport).filter_by(author =current_user).delete()
     db.session.commit()
     flash("Entry deleted", "success")
     return redirect(url_for('carbon_app.carbon_app_home', msg = 'All Entries Deleted'))
