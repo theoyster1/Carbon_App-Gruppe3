@@ -6,7 +6,7 @@ from wtforms.validators import InputRequired
 
 class GenForm(FlaskForm):
     transport = SelectField('Mean of conveyance', [InputRequired()],
-                            choices=[('Bus', 'Bus'), ('Car', 'Car'), ('Plane', 'Plane'), ('Ferry', 'Ferry'), 
+                            choices=[('Bus', 'Bus'), ('Car', 'Car'), ('Plane', 'Plane'), ('Boat', 'Boat'), 
                                      ('Motorbike', 'Motorbike'),
                                       ('Bicycle', 'Bicycle'), ('Walking', 'Walking'), ('Train', 'Train')])
     kms = FloatField('Kilometers', [InputRequired()])
