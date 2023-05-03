@@ -28,7 +28,7 @@
                     <br>
                     <h4>Annual CO2 offsetting rate varies from 21.77 kg CO2/tree to 31.5 kg CO2/tree. To compensate 1 tonne of CO2, 31 to 46 trees are needed. Source: <a href="https://www.encon.eu/en/calculation-co2-offsetting-trees">ENCON</a></h4>
                     <p>Total emissions: <b>{{ sum_total_emissions[0][0] }} kg CO2</b></p>
-                    <p>That is equiavalent to planting between {{carbon_offset_lower_bound}} to {{carbon_offset_upper_bound}} trees! </p> <br>
+                    <p>{{planting_str}}</p> <br>
                     <h4>Compensate for your carbon emissions: </h4> 
                     <p>Price per 1000kg: ${{CARBON_OFFSET_PRICE_PER_1000KG}}. Total price: ${{CARBON_OFFSET_PRICE_PER_1000KG}} x {{sum_total_emissions_ton}} tons = ${{user_carbon_offset_price}}</p>
                     <div class="btn">
