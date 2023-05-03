@@ -92,7 +92,7 @@ def your_data():
         emission_transport[2]
 
     if "Boat" in second_tuple_elements:
-        index_ferry = second_tuple_elements.index("Ferry")
+        index_ferry = second_tuple_elements.index("Boat")
         emission_transport[3] = first_tuple_elements[index_ferry]
     else:
         emission_transport[3]
@@ -150,7 +150,7 @@ def your_data():
         kms_transport[2]
 
     if "Boat" in second_tuple_elements:
-        index_boat = second_tuple_elements.index("boat")
+        index_boat = second_tuple_elements.index("Boat")
         kms_transport[3] = first_tuple_elements[index_boat]
     else:
         kms_transport[3]
