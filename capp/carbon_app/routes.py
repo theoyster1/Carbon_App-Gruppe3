@@ -64,6 +64,22 @@ def your_data():
     )
 
     # Emissions by category
+    
+    # define a dictionary to map each transportation mode to its index
+    transport_dict = {
+        'Bicycle': 0,
+        'Bus': 1,
+        'Car': 2,
+        'Boat': 3,
+        'Motorbike': 4,
+        'Plane': 5,
+        'Walking': 6,
+        'Train': 7
+    }
+
+    sum_transport_types = len(transport_dict)
+
+    # Emissions by category
     emissions_by_transport = (
         db.session.query(db.func.sum(Transport.total), Transport.transport)
         .filter(Transport.date > (datetime.now() - timedelta(days=5)))
@@ -72,48 +88,13 @@ def your_data():
         .order_by(Transport.transport.asc())
         .all()
     )
-    emission_transport = [0, 0, 0, 0, 0, 0, 0, 0]
-    first_tuple_elements = []
-    second_tuple_elements = []
+
+    emission_transport = [0] * sum_transport_types  # initialize the list with zeros
     for a_tuple in emissions_by_transport:
-        first_tuple_elements.append(a_tuple[0])
-        second_tuple_elements.append(a_tuple[1])
-
-    if "Bus" in second_tuple_elements:
-        index_bus = second_tuple_elements.index("Bus")
-        emission_transport[1] = first_tuple_elements[index_bus]
-    else:
-        emission_transport[1]
-
-    if "Car" in second_tuple_elements:
-        index_car = second_tuple_elements.index("Car")
-        emission_transport[2] = first_tuple_elements[index_car]
-    else:
-        emission_transport[2]
-
-    if "Boat" in second_tuple_elements:
-        index_ferry = second_tuple_elements.index("Boat")
-        emission_transport[3] = first_tuple_elements[index_ferry]
-    else:
-        emission_transport[3]
-
-    if "Motorbike" in second_tuple_elements:
-        index_motorbike = second_tuple_elements.index("Motorbike")
-        emission_transport[4] = first_tuple_elements[index_motorbike]
-    else:
-        emission_transport[4]
-
-    if "Plane" in second_tuple_elements:
-        index_plane = second_tuple_elements.index("Plane")
-        emission_transport[5] = first_tuple_elements[index_plane]
-    else:
-        emission_transport[5]
-        
-    if "Train" in second_tuple_elements:
-        index_train = second_tuple_elements.index("Train")
-        emission_transport[7] = first_tuple_elements[index_train]
-    else:
-        emission_transport[7]
+        transport_mode = a_tuple[1]
+        if transport_mode in transport_dict:
+            index = transport_dict[transport_mode]
+            emission_transport[index] = a_tuple[0]
 
     # Kilometers by category
     kms_by_transport = (
@@ -125,59 +106,12 @@ def your_data():
         .all()
     )
 
-    kms_transport = [0, 0, 0, 0, 0, 0, 0, 0]
-    first_tuple_elements = []
-    second_tuple_elements = []
+    kms_transport = [0] * sum_transport_types  # initialize the list with zeros
     for a_tuple in kms_by_transport:
-        first_tuple_elements.append(a_tuple[0])
-        second_tuple_elements.append(a_tuple[1])
-    if "Bicycle" in second_tuple_elements:
-        index_bicycle = second_tuple_elements.index("Bicycle")
-        kms_transport[0] = first_tuple_elements[index_bicycle]
-    else:
-        kms_transport[0]
-
-    if "Bus" in second_tuple_elements:
-        index_bus = second_tuple_elements.index("Bus")
-        kms_transport[1] = first_tuple_elements[index_bus]
-    else:
-        kms_transport[1]
-
-    if "Car" in second_tuple_elements:
-        index_car = second_tuple_elements.index("Car")
-        kms_transport[2] = first_tuple_elements[index_car]
-    else:
-        kms_transport[2]
-
-    if "Boat" in second_tuple_elements:
-        index_boat = second_tuple_elements.index("Boat")
-        kms_transport[3] = first_tuple_elements[index_boat]
-    else:
-        kms_transport[3]
-
-    if "Motorbike" in second_tuple_elements:
-        index_motorbike = second_tuple_elements.index("Motorbike")
-        kms_transport[4] = first_tuple_elements[index_motorbike]
-    else:
-        kms_transport[4]
-
-    if "Plane" in second_tuple_elements:
-        index_plane = second_tuple_elements.index("Plane")
-        kms_transport[5] = first_tuple_elements[index_plane]
-    else:
-        kms_transport[5]
-
-    if "Walking" in second_tuple_elements:
-        index_walk = second_tuple_elements.index("Walking")
-        kms_transport[6] = first_tuple_elements[index_walk]
-    else:
-        kms_transport[6]
-        
-    if "Train" in second_tuple_elements:
-        index_train = second_tuple_elements.index("Train")
-        kms_transport[7] = first_tuple_elements[index_train]
-    else:
-        kms_transport[7]  
+        transport_mode = a_tuple[1]
+        if transport_mode in transport_dict:
+            index = transport_dict[transport_mode]
+            kms_transport[index] = a_tuple[0]
     
     # Emissions by date (individual)
     emissions_by_date = (
