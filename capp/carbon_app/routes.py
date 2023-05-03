@@ -224,6 +224,26 @@ def your_data():
     TREE_OFFSET_UPPER = 31.5
     carbon_offset_lower_bound = round(sum_total_emissions[0][0] / TREE_OFFSET_UPPER)
     carbon_offset_upper_bound = round(sum_total_emissions[0][0] / TREE_OFFSET_LOWER)
+    planting_str = ""
+
+    if carbon_offset_lower_bound < 1 or carbon_offset_upper_bound < 1:
+        planting_str = "That is equivalent to planting less than one tree!"
+    elif carbon_offset_lower_bound == carbon_offset_upper_bound:
+        planting_str = (
+            "That is equivalent to planting ",
+            carbon_offset_lower_bound,
+            " trees!",
+        )
+    else:
+        planting_str = (
+            "That is equivalent to planting between ",
+            carbon_offset_lower_bound,
+            " and ",
+            carbon_offset_upper_bound,
+            " trees!",
+        )
+
+    planting_str = "".join(map(str, planting_str))
     CARBON_OFFSET_PRICE_PER_1000LBS = 7.99
     CARBON_OFFSET_PRICE_PER_1000KG = round(CARBON_OFFSET_PRICE_PER_1000LBS / 2.205, 2)
     user_carbon_offset_price = round(
@@ -273,6 +293,7 @@ def your_data():
         carbon_offset_upper_bound=carbon_offset_upper_bound,
         user_carbon_offset_price=user_carbon_offset_price,
         CARBON_OFFSET_PRICE_PER_1000KG=CARBON_OFFSET_PRICE_PER_1000KG,
+        planting_str=json.dumps(planting_str),
         ###
         average_temperature=json.dumps(temperatures),
         yearLabels=json.dumps(years),
