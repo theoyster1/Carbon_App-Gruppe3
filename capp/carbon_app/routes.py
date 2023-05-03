@@ -51,7 +51,7 @@ def carbon_app_home():
 @carbon_app.route("/carbon_app/your_data")
 @login_required
 def your_data():
-    if len(Transport.query.all()) < 1:
+    if len(Transport.query.filter_by(author = current_user).all()) < 1:
         return redirect(url_for('carbon_app.carbon_app_home'))
 
     # Table
