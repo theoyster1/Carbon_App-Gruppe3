@@ -15,7 +15,7 @@ carbon_app=Blueprint('carbon_app',__name__)
 efco2={'Bus':{'Diesel':0.0244130363170317,'CNG':0.019608750602746,'Petrol':0.10231,'Electric':0.00837053571428571},
     'Car':{'Petrol':0.131045333333333,'Diesel':0.132428717948718,'Electric':0},
     'Plane':{'Jet fuel':0.0969207895857439},
-    'Ferry':{'Diesel':2.22612334653623},
+    'Boat':{'Diesel':2.22612334653623},
     'Motorbike':{'Gasoline':0.0853866666666667},
     'Scooter':{'No Fossil Fuel':0},
     'Bicycle':{'No Fossil Fuel':0},
@@ -24,7 +24,7 @@ efco2={'Bus':{'Diesel':0.0244130363170317,'CNG':0.019608750602746,'Petrol':0.102
 efch4={'Bus':{'Diesel':2e-5,'CNG':2.5e-3,'Petrol':2e-5,'Electric':0},
     'Car':{'Petrol':3.1e-4,'Diesel':3e-6,'Electric':0},
     'Plane':{'Jet fuel':1.1e-4},
-    'Ferry':{'Diesel':3e-5, 'CNG':3e-5,'Electric':0},
+    'Boat':{'Diesel':3e-5, 'CNG':3e-5,'Electric':0},
     'Motorbike':{'Gasoline':2.1e-3,'Electric':0},
     'Bicycle':{'No Fossil Fuel':0},
     'Walking':{'No Fossil Fuel':0},
@@ -91,7 +91,7 @@ def your_data():
     else:
         emission_transport[2]
 
-    if "Ferry" in second_tuple_elements:
+    if "Boat" in second_tuple_elements:
         index_ferry = second_tuple_elements.index("Ferry")
         emission_transport[3] = first_tuple_elements[index_ferry]
     else:
@@ -149,7 +149,7 @@ def your_data():
     else:
         kms_transport[2]
 
-    if "Ferry" in second_tuple_elements:
+    if "Boat" in second_tuple_elements:
         index_ferry = second_tuple_elements.index("Ferry")
         kms_transport[3] = first_tuple_elements[index_ferry]
     else:
