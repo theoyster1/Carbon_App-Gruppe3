@@ -150,8 +150,8 @@ def your_data():
         kms_transport[2]
 
     if "Boat" in second_tuple_elements:
-        index_ferry = second_tuple_elements.index("Ferry")
-        kms_transport[3] = first_tuple_elements[index_ferry]
+        index_boat = second_tuple_elements.index("boat")
+        kms_transport[3] = first_tuple_elements[index_boat]
     else:
         kms_transport[3]
 
