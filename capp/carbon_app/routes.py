@@ -168,7 +168,7 @@ def your_data():
         kms_transport[5]
 
     if "Walking" in second_tuple_elements:
-        index_walk = second_tuple_elements.index("Walk")
+        index_walk = second_tuple_elements.index("Walking")
         kms_transport[6] = first_tuple_elements[index_walk]
     else:
         kms_transport[6]
