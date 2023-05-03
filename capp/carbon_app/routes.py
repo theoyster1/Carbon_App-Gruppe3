@@ -19,7 +19,7 @@ efco2={'Bus':{'Diesel':0.0244130363170317,'CNG':0.019608750602746,'Petrol':0.102
     'Motorbike':{'Gasoline':0.0853866666666667},
     'Scooter':{'No Fossil Fuel':0},
     'Bicycle':{'No Fossil Fuel':0},
-    'Walk':{'No Fossil Fuel':0},
+    'Walking':{'No Fossil Fuel':0},
     'Train':{'Diesel':0.039955611, 'Electric':0.009601554}}
 efch4={'Bus':{'Diesel':2e-5,'CNG':2.5e-3,'Petrol':2e-5,'Electric':0},
     'Car':{'Petrol':3.1e-4,'Diesel':3e-6,'Electric':0},
@@ -27,7 +27,7 @@ efch4={'Bus':{'Diesel':2e-5,'CNG':2.5e-3,'Petrol':2e-5,'Electric':0},
     'Ferry':{'Diesel':3e-5, 'CNG':3e-5,'Electric':0},
     'Motorbike':{'Gasoline':2.1e-3,'Electric':0},
     'Bicycle':{'No Fossil Fuel':0},
-    'Walk':{'No Fossil Fuel':0},
+    'Walking':{'No Fossil Fuel':0},
        'Train':{'Diesel':0.039955611, 'Electric':0.009601554}}
       
     
@@ -167,7 +167,7 @@ def your_data():
     else:
         kms_transport[5]
 
-    if "Walk" in second_tuple_elements:
+    if "Walking" in second_tuple_elements:
         index_walk = second_tuple_elements.index("Walk")
         kms_transport[6] = first_tuple_elements[index_walk]
     else:
